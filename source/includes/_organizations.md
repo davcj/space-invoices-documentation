@@ -978,3 +978,647 @@ This endpoint lists all Organizations.
 | [](#empty) | |
 | active | Boolean indicator if the organization is active (enabled). |
 | supportPin | 5 digit number used to identify or authenticate the organization requesting support. |
+
+## Update orgaization
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationEditOptions editOptions = new SpaceOrganizationEditOptions
+{
+    Name = "New Organization Name"
+};
+
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+SpaceOrganization spaceOrganization = organizationService.Update("ACCOUNT_ID", "ORGANIZATION_ID", editOptions);
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class SpaceOrganization
+{
+  [JsonProperty("id")]
+  public string Id { get; set; }
+
+  [JsonProperty("name")]
+  public string Name { get; set; }
+
+  [JsonProperty("address")]
+  public string Address { get; set; }
+
+  [JsonProperty("address2")]
+  public string Address2 { get; set; }
+
+  [JsonProperty("city")]
+  public string City { get; set; }
+
+  [JsonProperty("zip")]
+  public string Zip { get; set; }
+
+  [JsonProperty("country")]
+  public string Country { get; set; }
+
+  [JsonProperty("IBAN")]
+  public string Iban { get; set; }
+
+  [JsonProperty("bank")]
+  public string Bank { get; set; }
+
+  [JsonProperty("_defaults")]
+  public List<SpaceDefault> Defaults { get; set; }
+
+  [JsonProperty("locale")]
+  public string Locale { get; set; }
+
+  [JsonProperty("active")]
+  public bool Active { get; set; }
+
+  [JsonProperty("supportPin")]
+  public string SupportPin { get; set; }
+
+  [JsonProperty("brand")]
+  public string Brand { get; set; }
+
+}
+```
+
+```php
+```
+
+## Patch attributes
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationEditOptions patchOptions = new SpaceOrganizationEditOptions
+{
+    Name = "New Organization Name"
+};
+
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+SpaceOrganization spaceOrganization = organizationService.Patch("ORGANIZATION_ID", patchOptions);
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class SpaceOrganization
+{
+  [JsonProperty("id")]
+  public string Id { get; set; }
+
+  [JsonProperty("name")]
+  public string Name { get; set; }
+
+  [JsonProperty("address")]
+  public string Address { get; set; }
+
+  [JsonProperty("address2")]
+  public string Address2 { get; set; }
+
+  [JsonProperty("city")]
+  public string City { get; set; }
+
+  [JsonProperty("zip")]
+  public string Zip { get; set; }
+
+  [JsonProperty("country")]
+  public string Country { get; set; }
+
+  [JsonProperty("IBAN")]
+  public string Iban { get; set; }
+
+  [JsonProperty("bank")]
+  public string Bank { get; set; }
+
+  [JsonProperty("_defaults")]
+  public List<SpaceDefault> Defaults { get; set; }
+
+  [JsonProperty("locale")]
+  public string Locale { get; set; }
+
+  [JsonProperty("active")]
+  public bool Active { get; set; }
+
+  [JsonProperty("supportPin")]
+  public string SupportPin { get; set; }
+
+  [JsonProperty("brand")]
+  public string Brand { get; set; }
+
+}
+```
+
+```php
+```
+
+## Upload certificate
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+string path = @"PATH/TO/CERTIFICATE";
+
+FileInfo fileInfo = new FileInfo(path);
+
+if (fi.Exists)
+{
+  using (FileStream fs = fi.OpenRead())
+  {
+    Result result = organizationService.UploadCertificate("ORGANIZATION_ID", "test", "furs", fs, "PASSPHRASE");
+  }
+}
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Result
+{
+  [JsonProperty("success")]
+  public bool Success { get; set; }
+
+}
+```
+
+```php
+```
+
+## Check if organization has certificate
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+Exists exists = organizationService.HasCertificate("ORGANIZATION_ID", "furs", "test");
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Exists
+{
+  [JsonProperty("exists")]
+  public string ItExists { get; set; }
+}
+```
+
+```php
+```
+
+## Delete image
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+Result result = organizationService.DeleteImage("ORGANIZATION_ID", "logo");
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Result
+{
+  [JsonProperty("success")]
+  public bool Success { get; set; }
+
+}
+```
+
+```php
+```
+
+## Download image
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+HttpResponseMessage response = organizationService.DownloadImage("ORGANIZATION_ID", "logo");
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+HttpResponseMessage
+```
+
+```php
+```
+
+## Get total stats
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+TotalStats totalStats = organizationService.GetTotalStats("ORGANIZATION_ID", null);
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class TotalStats
+{
+  [JsonProperty("stats")]
+  public List<Stats> Stats {get; set;}
+
+  [JsonProperty("total")]
+  public List<Totals> Total {get; set;}
+
+  [JsonProperty("totalOverdue")]
+  public List<Due> TotalOverdue { get; set; }
+
+  [JsonProperty("totalDueThisMonth")]
+  public List<Due> TotalDueThisMonth { get; set; }
+
+  [JsonProperty("totalDue")]
+  public List<Due> TotalDue { get; set; }
+
+  [JsonProperty("totalPaymentsThisMonth")]
+  public List<Due> TotalPaymentsThisMonth { get; set; }
+}
+
+public class Stats
+{
+  [JsonProperty("name")]
+  public string Name { get; set; }
+
+  [JsonProperty("series")]
+  public List<Series> Series { get; set; }
+}
+
+public class Totals
+{
+  [JsonProperty("currency")]
+  public string Currency { get; set; }
+
+  [JsonProperty("total")]
+  public string Total { get; set; }
+}
+
+public class Due
+{
+  [JsonProperty("currency")]
+  public string Currency { get; set; }
+
+  [JsonProperty("value")]
+  public string Value { get; set; }
+}
+
+public class Series
+{
+  [JsonProperty("name")]
+  public string Name { get; set; }
+
+  [JsonProperty("value")]
+  public string Value { get; set; }
+}
+```
+
+```php
+```
+
+## Get payment total stats
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+TotalStats totalStats = organizationService.GetPaymentTotalStats("ORGANIZATION_ID", new DateTime(2018, 10, 10), new DateTime(2019, 10, 10), "month");
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class TotalStats
+{
+  [JsonProperty("stats")]
+  public List<Stats> Stats {get; set;}
+
+  [JsonProperty("total")]
+  public List<Totals> Total {get; set;}
+
+  [JsonProperty("totalOverdue")]
+  public List<Due> TotalOverdue { get; set; }
+
+  [JsonProperty("totalDueThisMonth")]
+  public List<Due> TotalDueThisMonth { get; set; }
+
+  [JsonProperty("totalDue")]
+  public List<Due> TotalDue { get; set; }
+
+  [JsonProperty("totalPaymentsThisMonth")]
+  public List<Due> TotalPaymentsThisMonth { get; set; }
+}
+
+public class Stats
+{
+  [JsonProperty("name")]
+  public string Name { get; set; }
+
+  [JsonProperty("series")]
+  public List<Series> Series { get; set; }
+}
+
+public class Totals
+{
+  [JsonProperty("currency")]
+  public string Currency { get; set; }
+
+  [JsonProperty("total")]
+  public string Total { get; set; }
+}
+
+public class Due
+{
+  [JsonProperty("currency")]
+  public string Currency { get; set; }
+
+  [JsonProperty("value")]
+  public string Value { get; set; }
+}
+
+public class Series
+{
+  [JsonProperty("name")]
+  public string Name { get; set; }
+
+  [JsonProperty("value")]
+  public string Value { get; set; }
+}
+```
+
+```php
+```
+
+## Get document total stats
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+TotalStats totalStats = organizationService.GetDocumentTotalStats("ORGANIZATION_ID", "invoice", new DateTime(2018, 10, 10), new DateTime(2019, 10, 10),"month");
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class TotalStats
+{
+  [JsonProperty("stats")]
+  public List<Stats> Stats {get; set;}
+
+  [JsonProperty("total")]
+  public List<Totals> Total {get; set;}
+
+  [JsonProperty("totalOverdue")]
+  public List<Due> TotalOverdue { get; set; }
+
+  [JsonProperty("totalDueThisMonth")]
+  public List<Due> TotalDueThisMonth { get; set; }
+
+  [JsonProperty("totalDue")]
+  public List<Due> TotalDue { get; set; }
+
+  [JsonProperty("totalPaymentsThisMonth")]
+  public List<Due> TotalPaymentsThisMonth { get; set; }
+}
+
+public class Stats
+{
+  [JsonProperty("name")]
+  public string Name { get; set; }
+
+  [JsonProperty("series")]
+  public List<Series> Series { get; set; }
+}
+
+public class Totals
+{
+  [JsonProperty("currency")]
+  public string Currency { get; set; }
+
+  [JsonProperty("total")]
+  public string Total { get; set; }
+}
+
+public class Due
+{
+  [JsonProperty("currency")]
+  public string Currency { get; set; }
+
+  [JsonProperty("value")]
+  public string Value { get; set; }
+}
+
+public class Series
+{
+  [JsonProperty("name")]
+  public string Name { get; set; }
+
+  [JsonProperty("value")]
+  public string Value { get; set; }
+}
+```
+
+```php
+```
+
+## Get number of this month invoices
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+Number number = organizationService.GetThisMonthInvoices("ORGANIZATION_ID");
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Number
+{
+  [JsonProperty("number")]
+  public string DocNumber { get; set; }
+}
+```
+
+```php
+```
+
+## Export
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceOrganizationService organizationService = new SpaceOrganizationService();
+
+HttpResponseMessage response = organizationService.Export("ORGANIZATION_ID", "document", null);
+```
+
+```php
+```
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+HttpResponseMessage
+```
+
+```php
+```
+

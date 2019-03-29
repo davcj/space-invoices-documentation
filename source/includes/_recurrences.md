@@ -563,3 +563,42 @@ This endpoint lists Recurrences.
 | date | Date of the Recurrence. |
 | iteration | Number iteration index of the Recurrence. |
 | [](#empty) | |
+
+## Count recurrences
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpaceRecurrenceService recurrenceService = new SpaceRecurrenceService();
+Counter count = recurrenceService.CountRecurrences("ORGANIZATION_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Counter
+{
+  [JsonProperty("count")]
+  public int Count { get; set; }
+}
+```
+
+```php
+
+```

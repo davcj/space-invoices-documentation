@@ -565,7 +565,7 @@ List<SpaceClient> list = clientService.List("ORGANIZATION_ID");
 ```
 
 ```csharp
-List<SpaceClient> 
+List<SpaceClient>
 ```
 ```php
 <?php
@@ -902,3 +902,44 @@ This endpoint returns a Client by their ID.
 | contact | Name of the Client. |
 | phone | Phone number of the Client. |
 | note | Text note about the Client. |
+
+
+## Count clients
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpaceClientService clientService = new SpaceClientService();
+Counter counter = clientService.CountClients("ORGANIZATION_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Counter
+{
+  [JsonProperty("count")]
+  public int Count { get; set; }
+}
+```
+
+```php
+
+```
+

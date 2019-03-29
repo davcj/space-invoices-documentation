@@ -360,3 +360,203 @@ This endpoint returns an the details of a specified Account.
 | ---: | --- |
 | id | ID of account. |
 | email | Email address of the account. |
+
+## Send verification mail
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+
+SpaceAccountService accountService = new SpaceAccountService();
+Result result = accountService.SendVerificationMail("ACCOUNT_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Result
+{
+  [JsonProperty("success")]
+  public bool Success { get; set; }
+
+}
+```
+
+```php
+
+```
+
+## Check if account is verified
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+
+SpaceAccountService accountService = new SpaceAccountService();
+Verified verified = accountService.IsVerified("ACCOUNT_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Verified
+{
+  [JsonProperty("isVerified")]
+  public string IsVerified { get; set; }
+}
+```
+
+```php
+
+```
+
+## Password reset
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpacePasswordResetOptions resetOptions = new SpacePasswordResetOptions
+{
+    OldPassword = "OLD_PASSWORD",
+    NewPassword = "NEW_PASSWORD"
+};
+
+SpaceAccountService accountService = new SpaceAccountService();
+SpaceResponse response = accountService.PasswordReset(resetOptions);
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceRespose
+```
+
+```php
+
+```
+
+## Check if account is authorized
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpaceAccountService accountService = new SpaceAccountService();
+SpaceResponse response = accountService.Authorized();
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceRespose
+```
+
+```php
+
+```
+
+## Find account by id
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpaceAccountService accountService = new SpaceAccountService();
+SpaceAccount account = accountService.FindById("ACCOUNT_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class SpaceAccount
+{
+  [JsonProperty("id")]
+  public string Id { get; set; }
+
+  [JsonProperty("email")]
+  public string Email { get; set; }
+
+}
+```
+
+```php
+
+```

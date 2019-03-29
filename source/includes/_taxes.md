@@ -277,6 +277,44 @@ This endpoint creates a new Rate for a Tax.
 | ---: | --- |
 
 
+## Delete tax rate
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpaceTaxService taxService = new SpaceTaxService();
+SpaceRespose response = taxService.DeleteTaxRate("TAX_ID", "TAX_RATE_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+SpaceRespose
+```
+
+```php
+
+```
+
+
+
+
 ## Update Tax
 
 ```shell
@@ -579,7 +617,7 @@ List<SpaceTax> taxes = taxService.List("ORGANIZATION_ID");
 ]
 ```
 ```csharp
-List<SpaceTax> 
+List<SpaceTax>
 ```
 ```php
 <?php
@@ -640,3 +678,44 @@ This endpoint lists the Organization's Taxes.
 | [](#empty) | |
 | recoverable | Boolean if the Tax is recoverable after being paid. |
 | compound | Boolean if the Tax is compound. _Compound Tax is calculated based on Item price and any other Tax applied to Item. |
+
+
+## Count taxes
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpaceTaxService taxService = new SpaceTaxService();
+Counter count = taxService.CountTaxes("ORGANIZATION_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Counter
+{
+  [JsonProperty("count")]
+  public int Count { get; set; }
+}
+```
+
+```php
+
+```
+

@@ -703,3 +703,44 @@ This endpoint searches for Organization's Items.
 | recoverable | Booleand indicator if paid Tax can be recovered by Organization. |
 | compound | Booleand indicator if Tax is compound. _Compound Tax is calculated on top of Document Item total value including any other Taxes on the item._ |
 | [](#empty) | |
+
+## Count items
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpaceItemService itemService = new SpaceItemService();
+Counter count = itemService.CountItems("ORGANIZATION_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Counter
+{
+  [JsonProperty("count")]
+  public int Count { get; set; }
+}
+```
+
+```php
+
+```
+
+

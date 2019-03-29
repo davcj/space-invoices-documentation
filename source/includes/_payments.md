@@ -525,3 +525,43 @@ This endpoint lists the Document's Payments.
 | date | Date of payment. |
 | amount | Amount of Payment. |
 | description | Description of Payment. |
+
+## Count payments
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpacePaymentService paymentService = new SpacePaymentService();
+Counter paymnets = paymentService.CountPayments("ORGANIZATION_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Counter
+{
+  [JsonProperty("count")]
+  public int Count { get; set; }
+}
+```
+
+```php
+
+```
+

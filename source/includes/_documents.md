@@ -1651,3 +1651,282 @@ Emails are sent from our address in the name of the organization sending it. Whi
 ### HTTP Response
 
 #### Arguments
+
+
+## Cancel document
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+
+SpaceDocumentService documentService = new SpaceDocumentService();
+Result result = documentService.Cancel("DOCUMENT_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Result
+{
+  [JsonProperty("success")]
+  public bool Success { get; set; }
+
+}
+```
+
+```php
+
+```
+
+## Uncancel document
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+
+SpaceDocumentService documentService = new SpaceDocumentService();
+Result result = documentService.MarkSent("DOCUMENT_ID");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Result
+{
+  [JsonProperty("success")]
+  public bool Success { get; set; }
+
+}
+```
+
+```php
+
+```
+
+## Check if number is unique document number
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+
+SpaceDocumentService documentService = new SpaceDocumentService();
+Unique unique = documentService.IsUniqueDocNumber("ORGANIZATION_ID", "NUMBER", "invoice");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Unique
+{
+    [JsonProperty("unique")]
+    public bool IsUniqueNumber { get; set; }
+
+}
+```
+
+```php
+
+```
+
+## Get last document number
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+
+SpaceDocumentService documentService = new SpaceDocumentService();
+Number number = documentService.LastDocNumber("ORGANIZATION_ID", "invoice");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Number
+{
+  [JsonProperty("number")]
+  public string DocNumber { get; set; }
+}
+```
+
+```php
+
+```
+
+## Get next document number
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+
+SpaceDocumentService documentService = new SpaceDocumentService();
+Number number = documentService.NextDocNumber("ORGANIZATION_ID", "invoice");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Number
+{
+  [JsonProperty("number")]
+  public string DocNumber { get; set; }
+}
+```
+
+```php
+
+```
+
+## Search documents
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+
+SpaceDocumentService documentService = new SpaceDocumentService();
+List<SpaceDocument> documents = documentService.Search("ORGANIZATION_ID", "term", "invoice");
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+List<SpaceDocument>
+```
+
+```php
+
+```
+
+## Count documents
+```shell
+
+```
+
+```javascript
+
+```
+
+```csharp
+SpaceDocumentService documentService = new SpaceDocumentService();
+Counter counter = documentService.CountDocuments("ORGANIZATION_ID", null);
+```
+
+```php
+
+```
+
+
+> Returns:
+
+```shell
+```
+
+```javascript
+```
+
+```csharp
+public class Counter
+{
+  [JsonProperty("count")]
+  public int Count { get; set; }
+}
+```
+
+```php
+
+```
